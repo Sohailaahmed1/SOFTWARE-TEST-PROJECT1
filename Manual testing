@@ -1,7 +1,0 @@
-git clone https://github.com/Sohailaahmed1/SOFTWARE-TEST-PROJECT1.git
-cd SOFTWARE-TEST-PROJECT1
-mkdir transfer_files
-mv US2_TransferFunds.xlsx transfer_files/
-git add transfer_files/US2_TransferFunds.xlsx
-git commit -m "Move US2_TransferFunds.xlsx to transfer_files folder"
-git push origin main
