@@ -1,30 +1,38 @@
-This repository documents the testing activities performed on the ParaBank website (https://parabank.parasoft.com/parabank/index.htm), a demo online banking application by Parasoft.
-Testing Activities
+Parabank Automation and Manual Testing Project
+An end-to-end testing project for Parabank including:
 
-Manual Testing
+• Manual Testing with Excel documentation
+• API Testing using Postman
+• UI Automation Testing with Selenium, TestNG, and Maven
 
-Conducted exploratory testing to verify core features: login, fund transfers, view transaction history, open new account, and bill payment.
-Identified usability and functional issues through manual execution.
+Project Structure
+• manual-testing/: Excel-based test cases and bug reports
+• postman-api-testing/: Postman collection + environment for API testing
+• ui-automation/: Java Selenium project with TestNG and Maven
+• docs/: Project plan, tools, and visuals
+• reports/: Exported test execution reports
 
-API Testing with Postman
+How to Run UI Tests
 
-Tested RESTful services (e.g., funds transfer, login,....) using Postman.
-Validated request/response workflows, status codes, and data integrity.
-Wrote JavaScript test scripts for automated API validation.
 
-UI Testing with Selenium WebDriver
 
-Automated UI tests for registration, login, and account management using Selenium WebDriver.
-Verified element visibility, navigation, and user interactions.
-Ensured consistent UI behavior across scenarios.
 
-Setup
+Tools Used
+• Selenium WebDriver
+• TestNG
+• Maven
+• Postman
+• Excel
+• JIRA
 
-Access the website at https://parabank.parasoft.com/parabank/index.htm.
-For local deployment, build the parabank.war using Maven and deploy on Apache Tomcat 9 with Java 17.
+
+Google Drive:
+• Link
 
 Contributors
+• Abdelrahman Mohamed – Team Leader
+• Sohaila Ahmed 
+• Raghad Tarek 
 
-Testing team members involved in manual, API, and UI testing efforts.
 
 
