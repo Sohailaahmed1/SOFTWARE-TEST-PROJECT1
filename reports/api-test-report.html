@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parabank API Test Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .pass { color: green; }
+        .fail { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Parabank API Test Report</h1>
+    <p><strong>Date:</strong> 2025-05-09T23:04:24.315Z</p>
+    <p><strong>Total Passed:</strong> <span class="pass">21</span></p>
+    <p><strong>Total Failed:</strong> <span class="fail">2</span></p>
+    <h2>Detailed Test Results</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Test Name</th>
+                <th>URL</th>
+                <th>Status Code</th>
+                <th>Tests</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>Register</td>
+            <td>https://parabank.parasoft.com/parabank/register.htm</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li><li class="pass">Successful POST request: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>Login</td>
+            <td>https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li><li class="pass">Successful POST request: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>Overview</td>
+            <td>https://parabank.parasoft.com/parabank/webjars/jquery/3.7.1/jquery.min.js</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li><li class="pass">Content-Type is present: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>Transfer</td>
+            <td>https://parabank.parasoft.com/parabank/transfer.htm</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li><li class="pass">Response contains HTML: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>TF</td>
+            <td>https://parabank.parasoft.com/parabank/services_proxy/bank/transfer?fromAccountId=15009&toAccountId=15342&amount=100</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li><li class="pass">Transfer success message: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>findTrans</td>
+            <td>https://parabank.parasoft.com/parabank/findtrans.htm?Amount=100</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>Transaction history</td>
+            <td>https://parabank.parasoft.com/parabank/activity.htm?id=45423
+</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>TransDetails</td>
+            <td>https://parabank.parasoft.com/parabank/transaction.htm?id=43336</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>openNew</td>
+            <td>https://parabank.parasoft.com/parabank/openaccount.htm</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li><li class="pass">Response contains HTML: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>Open</td>
+            <td>https://parabank.parasoft.com/parabank/services_proxy/bank/createAccount?customerId=12989&newAccountType=0&fromAccountId=14010</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li><li class="pass">Response has new account ID: PASS</li><li class="pass">Customer ID matches: PASS</li><li class="pass">Account type is CHECKING: PASS</li><li class="pass">Balance is 0: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>billPay</td>
+            <td>https://parabank.parasoft.com/parabank/billpay.htm</td>
+            <td>200</td>
+            <td><ul><li class="pass">Status code is 200: PASS</li></ul></td>
+        </tr>
+    
+        <tr>
+            <td>bill</td>
+            <td>https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=15009&amount=100</td>
+            <td>400</td>
+            <td><ul><li class="fail">Status code is 200: FAIL</li><li class="fail">Successful POST request: FAIL</li></ul></td>
+        </tr>
+    
+        </tbody>
+    </table>
+</body>
+</html>
 
