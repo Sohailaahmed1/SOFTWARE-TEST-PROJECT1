@@ -1,0 +1,460 @@
+{
+	"id": "c6687afa-a0eb-443d-a0df-58d625aa0306",
+	"name": "ParabankAPI",
+	"timestamp": "2025-05-10T12:19:17.646Z",
+	"collection_id": "43920188-e8ba93d0-a322-4e4f-b1db-97db770b4347",
+	"folder_id": 0,
+	"environment_id": "43920188-c648fe86-684e-4150-ad70-0908ac787180",
+	"totalPass": 21,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-05-10T12:19:12.151Z",
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "bc7241b4-98c4-4396-9fc1-2d58276f7ebc",
+			"name": "Register",
+			"url": "https://parabank.parasoft.com/parabank/register.htm",
+			"time": 1331,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1331
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "08b5fc36-54c5-4f05-a0b7-f2a678631809",
+			"name": "Login",
+			"url": "https://parabank.parasoft.com/parabank/login.htm?username=john&password=demo",
+			"time": 305,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				305
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "e185f7a3-503c-4a6b-9652-31e3d5231562",
+			"name": "Overview",
+			"url": "https://parabank.parasoft.com/parabank/overview.htm",
+			"time": 233,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				233
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true
+				}
+			]
+		},
+		{
+			"id": "93e09907-fd50-46d2-bab8-d51e01c40651",
+			"name": "Transfer",
+			"url": "https://parabank.parasoft.com/parabank/transfer.htm",
+			"time": 240,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response contains HTML": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains HTML": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				240
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response contains HTML": true
+				}
+			]
+		},
+		{
+			"id": "2f6d28e1-12b0-48ee-b68a-da8a45a173e5",
+			"name": "TF",
+			"url": "https://parabank.parasoft.com/parabank/services_proxy/bank/transfer?fromAccountId=15009&toAccountId=15342&amount=100",
+			"time": 257,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Transfer success message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Transfer success message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				257
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Transfer success message": true
+				}
+			]
+		},
+		{
+			"id": "3f783f07-745d-489c-bb02-046cfb5cff09",
+			"name": "findTrans",
+			"url": "https://parabank.parasoft.com/parabank/findtrans.htm?Amount=100",
+			"time": 238,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				238
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "0ee50620-f5b4-4071-9fc8-c7f2eab3f56c",
+			"name": "Transaction history",
+			"url": "https://parabank.parasoft.com/parabank/activity.htm?id=45423\n",
+			"time": 235,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "06938c29-2d63-446c-a3ca-a2d1c7acf373",
+			"name": "TransDetails",
+			"url": "https://parabank.parasoft.com/parabank/transaction.htm?id=43336",
+			"time": 247,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				247
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "15ac615e-bc1f-4bd0-bd5d-30029d6005c8",
+			"name": "openNew",
+			"url": "https://parabank.parasoft.com/parabank/openaccount.htm",
+			"time": 241,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response contains HTML": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains HTML": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				241
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response contains HTML": true
+				}
+			]
+		},
+		{
+			"id": "a176bd01-142d-4e30-9534-e04dc20a9e71",
+			"name": "Open",
+			"url": "https://parabank.parasoft.com/parabank/services_proxy/bank/createAccount?customerId=12989&newAccountType=0&fromAccountId=14010",
+			"time": 240,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response has new account ID": true,
+				"Customer ID matches": true,
+				"Account type is CHECKING": true,
+				"Balance is 0": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has new account ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Customer ID matches": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Account type is CHECKING": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Balance is 0": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				240
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response has new account ID": true,
+					"Customer ID matches": true,
+					"Account type is CHECKING": true,
+					"Balance is 0": true
+				}
+			]
+		},
+		{
+			"id": "29e6695f-dd01-469d-8d54-ac43ff2f5611",
+			"name": "billPay",
+			"url": "https://parabank.parasoft.com/parabank/billpay.htm",
+			"time": 238,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				238
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "23718de4-401b-4b13-8a34-0288c00995f2",
+			"name": "bill",
+			"url": "https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=33768&amount=100",
+			"time": 239,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 200": false,
+				"Successful POST request": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Successful POST request": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				239
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"Successful POST request": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4044,
+	"collection": {
+		"requests": [
+			{
+				"id": "bc7241b4-98c4-4396-9fc1-2d58276f7ebc",
+				"method": "POST"
+			},
+			{
+				"id": "08b5fc36-54c5-4f05-a0b7-f2a678631809",
+				"method": "POST"
+			},
+			{
+				"id": "e185f7a3-503c-4a6b-9652-31e3d5231562",
+				"method": "GET"
+			},
+			{
+				"id": "93e09907-fd50-46d2-bab8-d51e01c40651",
+				"method": "GET"
+			},
+			{
+				"id": "2f6d28e1-12b0-48ee-b68a-da8a45a173e5",
+				"method": "POST"
+			},
+			{
+				"id": "3f783f07-745d-489c-bb02-046cfb5cff09",
+				"method": "GET"
+			},
+			{
+				"id": "0ee50620-f5b4-4071-9fc8-c7f2eab3f56c",
+				"method": "GET"
+			},
+			{
+				"id": "06938c29-2d63-446c-a3ca-a2d1c7acf373",
+				"method": "GET"
+			},
+			{
+				"id": "15ac615e-bc1f-4bd0-bd5d-30029d6005c8",
+				"method": "GET"
+			},
+			{
+				"id": "a176bd01-142d-4e30-9534-e04dc20a9e71",
+				"method": "POST"
+			},
+			{
+				"id": "29e6695f-dd01-469d-8d54-ac43ff2f5611",
+				"method": "GET"
+			},
+			{
+				"id": "23718de4-401b-4b13-8a34-0288c00995f2",
+				"method": "POST"
+			}
+		]
+	}
+}

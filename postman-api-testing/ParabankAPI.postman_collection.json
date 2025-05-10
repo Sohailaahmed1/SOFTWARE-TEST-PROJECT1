@@ -1,0 +1,591 @@
+{
+	"info": {
+		"_postman_id": "e8ba93d0-a322-4e4f-b1db-97db770b4347",
+		"name": "ParabankAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43920188",
+		"_collection_link": "https://sohailaahmed-6968011.postman.co/workspace/Parabank-G6~e1d4b9f0-f782-4cda-80eb-6c18f4218bb3/collection/43920188-e8ba93d0-a322-4e4f-b1db-97db770b4347?action=share&source=collection_link&creator=43920188"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/register.htm",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"register.htm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "john",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "demo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/login.htm?username=john&password=demo",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"login.htm"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "john"
+						},
+						{
+							"key": "password",
+							"value": "demo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Overview",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/overview.htm",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"overview.htm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains HTML\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"<html>\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/transfer.htm",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"transfer.htm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TF",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Transfer success message\", () => {\r",
+							"    pm.expect(pm.response.text()).to.equal(\"Successfully transferred $100 from account #15009 to account #15342\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/services_proxy/bank/transfer?fromAccountId=15009&toAccountId=15342&amount=100",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"services_proxy",
+						"bank",
+						"transfer"
+					],
+					"query": [
+						{
+							"key": "fromAccountId",
+							"value": "15009"
+						},
+						{
+							"key": "toAccountId",
+							"value": "15342"
+						},
+						{
+							"key": "amount",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findTrans",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/findtrans.htm?Amount=100",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"findtrans.htm"
+					],
+					"query": [
+						{
+							"key": "Amount",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction history",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/activity.htm?id=45423\n",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"activity.htm"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "45423\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/transaction.htm?id=43336",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"transaction.htm"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "43336"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "openNew",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains HTML\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"<html>\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "JSESSIONID",
+						"value": "407169293C451183EE2DCC74E63B8D4E",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/openaccount.htm",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"openaccount.htm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has new account ID\", () => {\r",
+							"    pm.expect(pm.response.json().id).to.exist;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Customer ID matches\", () => {\r",
+							"    pm.expect(pm.response.json().customerId).to.equal(12989);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Account type is CHECKING\", () => {\r",
+							"    pm.expect(pm.response.json().type).to.equal(\"CHECKING\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Balance is 0\", () => {\r",
+							"    pm.expect(pm.response.json().balance).to.equal(0);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/services_proxy/bank/createAccount?customerId=12989&newAccountType=0&fromAccountId=14010",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"services_proxy",
+						"bank",
+						"createAccount"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "12989"
+						},
+						{
+							"key": "newAccountType",
+							"value": "0"
+						},
+						{
+							"key": "fromAccountId",
+							"value": "14010"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "billPay",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/billpay.htm",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"billpay.htm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bill",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=33768&amount=100",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"services_proxy",
+						"bank",
+						"billpay"
+					],
+					"query": [
+						{
+							"key": "accountId",
+							"value": "33768"
+						},
+						{
+							"key": "amount",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
