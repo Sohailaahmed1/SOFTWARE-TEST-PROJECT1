@@ -1,1 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="DemoSuite">
+    <test name="TestClass">
+        <classes>
+            <class name="Testing" />
+             <class name="ParabankUITests" />
 
+        </classes>
+    </test>
+</suite>
